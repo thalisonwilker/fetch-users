@@ -1,12 +1,13 @@
 $('table').hide()
 $('button').on('click', event => {
-
+    let tbody = $('tbody')
+    tbody.html('')
     $('button').text('Listando ...')
 
     fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(json => {
-        let tbody = $('tbody')
+        
         json.forEach(user => {
             let tableRow = `<tr>
                 <td>${user.name}</td>
