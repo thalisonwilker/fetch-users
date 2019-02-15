@@ -5,7 +5,8 @@ $('button').on('click', event => {
     
     $.ajax({
         url: 'http://jsonplaceholder.typicode.com/users',
-        method: 'GET'
+        method: 'GET',
+        dataType: 'json'
     }).done( users => {
         let tbody = $('tbody')
         users.forEach( user =>{
